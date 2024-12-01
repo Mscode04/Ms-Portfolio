@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ms App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        @keyframes border-animation {
+            0% {
+                border-color: transparent transparent transparent transparent;
+            }
+
+            25% {
+                border-color: #1F51FF transparent transparent transparent;
+            }
+
+            50% {
+                border-color: #1F51FF #1F51FF transparent transparent;
+            }
+
+            75% {
+                border-color: #1F51FF #1F51FF #1F51FF transparent;
+            }
+
+            100% {
+                border-color: #1F51FF #1F51FF #1F51FF #1F51FF;
+            }
+        }
+
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: "Arial", sans-serif;
+            text-align: center;
+        }
+
+        .mobile-container {
+            width: 350px;
+            height: 720px;
+            background: linear-gradient(145deg, #000000, #1b1b1b);
+            border-radius: 40px;
+            margin: auto;
+            position: relative;
+            padding: 20px;
+            overflow: hidden;
+            border: 5px solid transparent;
+  animation: border-animation 2s linear infinite;
+  transition: border-color 0.5s ease;
+        }
+
+        .mobile-container::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            z-index: 0;
+            border-radius: 40px;
+            border: 5px solid transparent;
+            background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            background-size: 300%;
+            animation: running-light 5s linear infinite;
+        }
+
+        @keyframes running-light {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .notch {
+            background: #1e1e1e;
+            width: 120px;
+            height: 10px;
+            border-radius: 20px 20px 0 0;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 5px #000;
+        }
+
+        .screen {
+            background: #1b1b1b;
+            width: 310px;
+            height: 640px;
+            border-radius: 30px;
+            margin: 40px auto;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        .profile span {
+            position: relative;
+            top: 20px;
+            font-size: 10px;
+            color: #000;
+        }
+
+        .profile a {
+            text-decoration: none;
+        }
+
+        .profile img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #686868;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        .profile h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2rem;
+            color: #462001;
+        }
+
+        .profile p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #ba5400;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .app {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: pop-in 1s ease forwards;
+        }
+
+        .app:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px #f3f3f3, 0 0 30px #00ffff;
+        }
+
+        .app img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        @keyframes pop-in {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center py-5">
+        <h1>Ms Developer</h1>
+        <p>Let's Connect</p>
+
+        <div class="mobile-container">
+            <div class="notch"></div>
+            <div class="screen">
+                <div class="profile">
+                    <img src="profile.jpg" alt="Profile Picture" />
+                    <h3>Mohammed Shaheen KP</h3>
+                    <p>CEO & Co-Founder - Neuraq Technologies</p>
+                    <p>MERN | PYTHON DEVELOPER</p>
+                </div>
+                <div class="apps-grid">
+                    <div class="app">
+                        <a href="https://shaheenkp.in" target="_blank">
+                            <img src="google.png" alt="Google" />
+                        </a>
+                    </div>
+                    <div class="app">
+                        <a href="https://www.linkedin.com/in/shaheenkp/" target="_blank">
+                            <img src="linkedin.png" alt="LinkedIn" />
+                        </a>
+                    </div>
+                    <div class="app">
+                        <a href="https://github.com/Mscode04" target="_blank">
+                            <img src="github.webp" alt="GitHub" />
+                        </a>
+                    </div>
+                    <div class="app">
+                        <a href="https://www.instagram.com/___zcl3_/" target="_blank">
+                            <img src="instagram.png" alt="Instagram" />
+                        </a>
+                    </div>
+                    <div class="app">
+                        <a href="https://wa.me/8157980307" target="_blank">
+                            <img src="whatsapp.png" alt="WhatsApp" />
+                        </a>
+                    </div>
+                    <div class="app">
+                        <a href="ailto:ms.shaheenkp@gmail.com" target="_blank">
+                            <img src="gmail.png" alt="Gmail" />
+                        </a>
+                    </div>
+                    <div class="app">
+                        <a href="https://discord.com/users/1246535406883962900" target="_blank">
+                            <img src="dis.png" alt="Discord" />
+                        </a>
+                    </div>
+                    <div class="app">
+                        <a href="https://stackoverflow.com/users/24054252/shaheen-kp" target="_blank">
+                            <img src="stack.png" alt="stackoverflow" />
+                        </a>
+                    </div>
+                    <div class="app">
+                        <a href="https://neuraq.in" target="_blank">
+                            <img src="neuraq.png" alt="Neuraq" />
+                        </a>
+                    </div>
+
+                </div>
+                <div class="profile">
+                    <span class="def">Develop by <a href="">@MsDev</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
